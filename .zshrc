@@ -1,7 +1,7 @@
 #
 # .zshrc
 #
-# @author Jeff Geerling
+# @author Shawn Stephens
 #
 
 # Colors.
@@ -32,10 +32,10 @@ fi
 
 # Set architecture-specific brew share path.
 arch_name="$(uname -m)"
-if [ "${arch_name}" = "x86_64" ]; then
-    share_path="/usr/local/share"
-elif [ "${arch_name}" = "arm64" ]; then
+if [ "${arch_name}" = "arm64" ]; then
     share_path="/opt/homebrew/share"
+elif [ "${arch_name}" = "x86_64" ]; then
+    share_path="/usr/local/share"
 else
     echo "Unknown architecture: ${arch_name}"
 fi
@@ -82,20 +82,20 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 # Super useful Docker container oneshots.
 # Usage: dockrun, or dockrun [centos7|fedora27|debian9|debian8|ubuntu1404|etc.]
 # Run on arm64 if getting errors: `export DOCKER_DEFAULT_PLATFORM=linux/amd64`
-dockrun() {
- docker run -it geerlingguy/docker-"${1:-ubuntu1604}"-ansible /bin/bash
-}
+#dockrun() {
+# docker run -it geerlingguy/docker-"${1:-ubuntu1604}"-ansible /bin/bash
+#}
 
 # Enter a running Docker container.
-function denter() {
- if [[ ! "$1" ]] ; then
-     echo "You must supply a container ID or name."
-     return 0
- fi
-
- docker exec -it $1 bash
- return 0
-}
+#function denter() {
+# if [[ ! "$1" ]] ; then
+#     echo "You must supply a container ID or name."
+#     return 0
+# fi
+#
+# docker exec -it $1 bash
+# return 0
+#}
 
 # Delete a given line number in the known_hosts file.
 knownrm() {
@@ -108,7 +108,7 @@ knownrm() {
 }
 
 # Allow Composer to use almost as much RAM as Chrome.
-export COMPOSER_MEMORY_LIMIT=-1
+#export COMPOSER_MEMORY_LIMIT=-1
 
 # Ask for confirmation when 'prod' is in a command string.
 #prod_command_trap () {
