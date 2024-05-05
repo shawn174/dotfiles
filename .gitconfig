@@ -1,6 +1,6 @@
 [user]
-  name = Jeff Geerling
-  email = geerlingguy@mac.com
+  name = Shawn Stephens
+  email = shawn.stephens@gmail.com
 [core]
   editor = vi
   excludesfile = ~/.gitignore
@@ -15,7 +15,7 @@
 [web]
   browser = google-chrome
 [credential]
-  helper = osxkeychain
+  helper = 1password
 [push]
   default = simple
 [merge]
