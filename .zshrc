@@ -127,3 +127,4 @@ knownrm() {
 #}
 #shopt -s extdebug
 #trap prod_command_trap DEBUG
+source /Users/shawn/.config/op/plugins.sh
